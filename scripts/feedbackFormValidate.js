@@ -11,19 +11,16 @@ function feedbackFormValidate()
     var phone = contactFormObj.phone.value;
     var email = contactFormObj.email.value;
     var everythingOK = true;
+    var message = contactFormObj.message.value;
+    var rating = contactFormObj.Rating.value;
+    var words = 0;
 
     if (!validateName(firstName))
     {
         alert("Error: Invalid first name.");
         everythingOK = false;
     }
-    
-    if (!validateName(lastName))
-    {
-        alert("Error: Invalid last name.");
-        everythingOK = false;
-    }
-    
+
     if (!validatePhone(phone))
     {
         alert("Error: Invalid phone number.");
@@ -35,16 +32,20 @@ function feedbackFormValidate()
         alert("Error: Invalid e-mail address.");
         everythingOK = false;
     }
-    
-    if (everythingOK)
-    {
-        if (contactFormObj.reply.checked)
-            alert("Warning: The e-mail feature is currently not supported.");
-        alert("All the information looks good.\nThank you!");
-        return true;
-    }
-    else
-        return false;
+   if (!validateMessage(message))
+   {
+    alert("Error: Message box is empty.");
+    everythingOK = false;
+   }
+
+   words = wordCount(message);
+
+   var alertSummary = "Here is the summary of the form you just filled.\n\n";
+   alertSummary += "Total word counts ="+words + "\n";
+   alertSummary += "You reated this page with "+rating + " stars!\n";
+   alertSummary += "Your email address valid?: ="+validateEmail(email) + "\n";
+   alertSummary += "You selected to get a reply?:="+contactFormObj.reply.checked + "\n";
+   alert(alertSummary);
 }
 
 function validateName(name)
@@ -75,3 +76,29 @@ function validateEmail(address)
         return false;
 }
 
+function validateMessage(message)
+{
+    if (message.length==0)
+    {
+        return false;
+    }
+    else
+    {
+        words = wordCount(message);
+        return true;
+    }
+}
+function wordCount(message)
+{
+    message = message.replace(/  +/g, ' ');
+    "Source: https://www.tutorialrepublic.com/faq/how-to-replace-multiple-spaces-with-single-space-in-javascript.php"
+    var count = 0;
+    rawWords = message.split(" ");
+    for (let i = 0; i < rawWords.length; i++) {
+        if (rawWords[i].length>0)
+        {
+            count+=1;
+        }        
+      }      
+    return count;
+}
