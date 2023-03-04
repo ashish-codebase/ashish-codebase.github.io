@@ -1,83 +1,78 @@
 
 <!DOCTYPE html>
-<!-- bmiForm.html -->
+<!-- feedbackForm.html -->
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/default.css">
-    <script src="scripts/bmiFormProcess.js"></script>
-    <script src="scripts/bmiFormValidate.js"></script>
-    <script src="scripts/bmiCalculate.js"></script>
+    <script src="scripts/feedbackFormValidate.js"></script>
     <title>Nature's Source - Canada's largest specialty vitamin store</title>
   </head>
   <body>
-    <main class="BMI">
-      <h4 class="Centered">Body Mass Index Calculator</h4>
-      <p>Body Mass Index (BMI) is used as an indicator of total body fat. In
-      order to calculate your BMI, please input your height and weight.</p>
-      <form id="bmiForm" onsubmit="bmiFormProcess()">
-        <fieldset class="SectionBackground">
-          <legend class="LegendBackground">Vital statistics</legend> 
-          <table>
-            <tr>
-              <td><label for="height">Your height:</label></td>
-              <td><input id="height" type="text" name="height" size="7"></td>
-              <td><label for="heightUnit">Choose unit:</label></td>
-              <td><select id="heightUnit" name="heightUnit">
-                <option>inches</option>
-                <option>centimeters</option>
-              </select></td>
-            </tr>
-            <tr>
-              <td><label for="weight">Your weight:</label></td>
-              <td><input id="weight" type="text" name="weight" size="7"></td>
-              <td><label for="weightUnit">Choose unit:</label></td>
-              <td><select id="weightUnit" name="weightUnit">
-                <option>pounds</option>
-                <option>kilograms</option>
-              </select></td>
-            </tr>
-            <tr>
-              <td colspan="4"><label for="details">Please check here if you
-              want a detailed analysis of your BMI:</label>
-              <input id="details" type="checkbox"
-                     name="details" value="yes"></td>
-            </tr>
-          </table>
-        </fieldset>
-        <fieldset class="SectionBackground">
-          <legend class="LegendBackground">E-mail record?</legend> 
-          <table>
-            <tr>
-              <td colspan="2"><label for="wantMail">Do you want your BMI sent
-              to you by e-mail?</label> <input id="wantMail" type="checkbox"
-              name="wantMail" value="yes"></td>
-            </tr>
-            <tr>
-              <td><label for="email">E-mail Address:</label></td>
-              <td><input id="email" type="text" name="email" size="40"></td>
-            </tr>
-          </table>
-        </fieldset>
-        <fieldset class="SectionBackground">
-          <legend class="LegendBackground">Processing</legend> 
-          <table>
-            <tr>
-              <td><input type="submit" value="Compute your BMI"></td>
-              <td><input type="reset" value="Reset form"></td>
-            </tr>
-          </table>
-        </fieldset>
+    <div style="margin:10px; padding: 10px;">
+    <main class="Feedback">
+      <h4>Feedback Form</h4>
+      <h5>Let Us Know What You Think</h5>
+      <form id="contactForm" onsubmit="feedbackFormValidate()">
+        <div style="margin-left:5px;"> Star rating        
+          <input type="radio" name="Rating" value="1">
+          <label>1</label>
+          <input type="radio" name="Rating" value="2">
+          <label>2</label>
+          <input type="radio" name="Rating" value="3">
+          <label>3</label>
+          <input type="radio" name="Rating" value="4">
+          <label>4</label>
+          <input type="radio" name="Rating" value="5">
+          <label>5</label>
+      </div>
+      <table>
+        <tr>
+          <td>Salutation:</td>
+          <td><select name="salute">
+            <option>&nbsp;</option>
+            <option>Mrs.</option>
+            <option>Ms.</option>
+            <option>Mr.</option>
+            <option>Dr.</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td>First Name:</td>
+          <td><input type="text" name="firstName" size="40"></td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td><input type="text" name="lastName" size="40"></td>
+        </tr>
+        <tr>
+          <td>E-mail Address:</td>
+          <td><input type="text" name="email" size="40"></td>
+        </tr>
+        <tr>
+          <td>Phone Number:</td>
+          <td><input type="text" name="phone" size="40"></td>
+        </tr>
+        <tr>
+          <td>Subject:</td>
+          <td><input type="text" name="subject" size="40"></td>
+        </tr>
+        <tr>
+          <td>Comments:</td>
+          <td><textarea name="message" rows="6" cols="38">
+          </textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2">Please check here if you wish to receive a reply:
+          <input type="checkbox" name="reply" value="yes"></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Send Feedback"></td>
+          <td><input type="reset" value="Reset Form"></td>
+        </tr>
+      </table>
       </form>
-      <p>Total body fat is correlated to the risk of certain diseases
-      which can be potentially fatal. BMI is valid for both men and women.
-      However, it should only be used as a guideline as it has some
-      limitations. It may overestimate the body fat in muscular persons and
-      underestimate the body fat in persons who have lost muscle mass.</p>
-      <p>More information can be found at the
-      <a href="http://www.nhlbisupport.com/bmi/bmicalc.htm">National
-      Institute of Health</a> website. Our calculator is based on the
-      formula obtained from this site.</p>
     </main>
+  </div>
   </body>
 </html>
