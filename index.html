@@ -1,84 +1,83 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Internet programming project website</title>
-  <link href="bitnami.css" media="all" rel="Stylesheet" type="text/css" /> 
-  <link href="/dashboard/stylesheets/all.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-  <div class="contain-to-grid">
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/dashboard/index.html">Apache Friends</a></h1>
-        </li>
-        <li class="toggle-topbar menu-icon">
-          <a href="#">
-            <span>Menu</span>
-          </a>
-        </li>
-      </ul>
-
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li class="active"><a href="/applications.html">Applications</a></li>
-          <li class=""><a href="/dashboard/faq.html">FAQs</a></li>
-          <li class=""><a href="/dashboard/howto.html">HOW-TO Guides</a></li>
-          <li class=""><a target="_blank" href="/dashboard/phpinfo.php">PHPInfo</a></li>
-          <li class=""><a href="/phpmyadmin/">phpMyAdmin</a></li>
-        </ul>
-      </section>
-    </nav>
-  </div>
-  <div id="wrapper">
-    <div class="hero">
-       <div class="row">
-         <div class="large-12 columns">
-            <p>Apache Friends and Bitnami are cooperating to make dozens of open source applications available on XAMPP, for free. Bitnami-packaged applications include Wordpress, Drupal, Joomla! and dozens of others and can be deployed with one-click installers. Visit the <a href="https://bitnami.com/xampp?utm_source=bitnami&utm_medium=installer&utm_campaign=XAMPP%2BModule" target="_blank">Bitnami XAMPP page</a> for details on the currently available apps.</p><br/>
-            <p>Check out our <a href="https://www.apachefriends.org/bitnami_for_xampp.html" target="_blank" >Bitnami for XAMPP Start Guide</a> for more information about the applications installed.</p>
-            <p id="demo"></p>
-         </div>
-       </div>
-    </div>
-    <div id="lowerContainer" class="row">
-      <div id="content" class="large-12 columns">
-          <!-- @@BITNAMI_MODULE_PLACEHOLDER@@ -->
-      </div>
-    </div>
-  </div>
-  <footer>
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="row">
-          <div class="large-8 columns">
-            <ul class="social">
-              <li class="twitter"><a href="https://twitter.com/apachefriends">Follow us on Twitter</a></li>
-              <li class="facebook"><a href="https://www.facebook.com/we.are.xampp">Like us on Facebook</a></li>
-              <li class="google"><a href="https://plus.google.com/+xampp/posts">Add us to your G+ Circles</a></li>
-            </ul>
-
-            <ul class="inline-list">
-              <li><a href="https://www.apachefriends.org/blog.html">Blog</a></li>
-              <li><a href="https://www.apachefriends.org/privacy_policy.html">Privacy Policy</a></li>
-              <li>
-                <a target="_blank" href="http://www.fastly.com/">                    CDN provided by
-                  <img width="48" data-2x="/dashboard/images/fastly-logo@2x.png" src="/dashboard/images/fastly-logo.png" />
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="large-4 columns">
-            <p class="text-right">Copyright (c) 2015, Apache Friends</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script>
-      document.getElementById("demo").innerHTML = "My First JavaScript";
-  </script>
-</body>
+<!DOCTYPE html>
+<!-- bmiForm.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/default.css">
+    <script src="scripts/bmiFormProcess.js"></script>
+    <script src="scripts/bmiFormValidate.js"></script>
+    <script src="scripts/bmiCalculate.js"></script>
+    <title>Nature's Source - Canada's largest specialty vitamin store</title>
+  </head>
+  <body>
+    <main class="BMI">
+      <h4 class="Centered">Body Mass Index Calculator</h4>
+      <p>Body Mass Index (BMI) is used as an indicator of total body fat. In
+      order to calculate your BMI, please input your height and weight.</p>
+      <form id="bmiForm" onsubmit="bmiFormProcess()">
+        <fieldset class="SectionBackground">
+          <legend class="LegendBackground">Vital statistics</legend> 
+          <table>
+            <tr>
+              <td><label for="height">Your height:</label></td>
+              <td><input id="height" type="text" name="height" size="7"></td>
+              <td><label for="heightUnit">Choose unit:</label></td>
+              <td><select id="heightUnit" name="heightUnit">
+                <option>inches</option>
+                <option>centimeters</option>
+              </select></td>
+            </tr>
+            <tr>
+              <td><label for="weight">Your weight:</label></td>
+              <td><input id="weight" type="text" name="weight" size="7"></td>
+              <td><label for="weightUnit">Choose unit:</label></td>
+              <td><select id="weightUnit" name="weightUnit">
+                <option>pounds</option>
+                <option>kilograms</option>
+              </select></td>
+            </tr>
+            <tr>
+              <td colspan="4"><label for="details">Please check here if you
+              want a detailed analysis of your BMI:</label>
+              <input id="details" type="checkbox"
+                     name="details" value="yes"></td>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset class="SectionBackground">
+          <legend class="LegendBackground">E-mail record?</legend> 
+          <table>
+            <tr>
+              <td colspan="2"><label for="wantMail">Do you want your BMI sent
+              to you by e-mail?</label> <input id="wantMail" type="checkbox"
+              name="wantMail" value="yes"></td>
+            </tr>
+            <tr>
+              <td><label for="email">E-mail Address:</label></td>
+              <td><input id="email" type="text" name="email" size="40"></td>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset class="SectionBackground">
+          <legend class="LegendBackground">Processing</legend> 
+          <table>
+            <tr>
+              <td><input type="submit" value="Compute your BMI"></td>
+              <td><input type="reset" value="Reset form"></td>
+            </tr>
+          </table>
+        </fieldset>
+      </form>
+      <p>Total body fat is correlated to the risk of certain diseases
+      which can be potentially fatal. BMI is valid for both men and women.
+      However, it should only be used as a guideline as it has some
+      limitations. It may overestimate the body fat in muscular persons and
+      underestimate the body fat in persons who have lost muscle mass.</p>
+      <p>More information can be found at the
+      <a href="http://www.nhlbisupport.com/bmi/bmicalc.htm">National
+      Institute of Health</a> website. Our calculator is based on the
+      formula obtained from this site.</p>
+    </main>
+  </body>
 </html>
